@@ -1,22 +1,18 @@
-# 3720 Twitter API Example
+Run: Race of Life
 
-This project works with the wonderful PHP Wrapper [TwitterAPIExchange.php](https://github.com/j7mbo/twitter-api-php) by [James Mallison](https://www.j7mbo.com/) (J7mbo) 
 
-## Get Validated:
-* Create a [Twitter App](https://developer.twitter.com/en/apps)
-* use a domain name you own as the Website URL (won't be an issue for local hosting)
-* generate keys and tokens
 
-## Update and Run Code
-* update credentials in get_tweets.php with keys and tokens from Twitter App
-* set $URL endpoint and $getfield methods in get_tweets.php
-* run the project from a local server
-* examine data and determine what to pull and how to display it
+This interface is supposed to display recent tweets containing the term 'race'
 
-## Running Twitter Wrapper with UwAmp
-To use with UwAmp, you must update the CURL certificate (no need to do this if you're running MAMP)
-1. Run UwAmp
-2. Click on page icon next to PHP Config button 
-3. Search for curl.cainfo
-4. Delete the semicolon at the start of the line and update the line to read: `curl.cainfo = "C:\Curl\cacert.pem"`
-5. Save the file
+It features a running man in the center of the screen and he is competeting agianst the tweets
+running amongst him in the other lanes.
+
+By changing your mouse position you effect the speed of text scrolling on the screen from slow to fast.
+
+
+
+Keys and Tokens: 
+      'oauth_access_token' => "69072210-VuXfka9AgFCYzehVSTI1P0gBAQCPn8YK43aNQjc77",
+	    'oauth_access_token_secret' => "j9AKqTzexMGmx71Z2BWsscZntnzcXUohDNT0DiuUIjR6z",
+	    'consumer_key' => "MRldW5bC92XmHUKUYI3kGyPV3",
+	    'consumer_secret' => "RGKZvC8wl0ucg3dUDTFcgXBQATLzK8XXCTJqtnogmagL3dS1dC"
