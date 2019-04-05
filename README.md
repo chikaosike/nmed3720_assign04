@@ -1,22 +1,15 @@
-# 3720 Twitter API Example
+3720 Assignment 3 : Twitter API
 
-This project works with the wonderful PHP Wrapper [TwitterAPIExchange.php](https://github.com/j7mbo/twitter-api-php) by [James Mallison](https://www.j7mbo.com/) (J7mbo) 
+Running Man by Chika Osike
 
-## Get Validated:
-* Create a [Twitter App](https://developer.twitter.com/en/apps)
-* use a domain name you own as the Website URL (won't be an issue for local hosting)
-* generate keys and tokens
+Concept: Man is running in middle of street and 
+tweets related to "running" fly past him.
 
-## Update and Run Code
-* update credentials in get_tweets.php with keys and tokens from Twitter App
-* set $URL endpoint and $getfield methods in get_tweets.php
-* run the project from a local server
-* examine data and determine what to pull and how to display it
+By clicking the 'running' button bellow the image it triggers random tweets with #running used.
 
-## Running Twitter Wrapper with UwAmp
-To use with UwAmp, you must update the CURL certificate (no need to do this if you're running MAMP)
-1. Run UwAmp
-2. Click on page icon next to PHP Config button 
-3. Search for curl.cainfo
-4. Delete the semicolon at the start of the line and update the line to read: `curl.cainfo = "C:\Curl\cacert.pem"`
-5. Save the file
+Keys and Tokens: 'oauth_access_token' => "69072210-VuXfka9AgFCYzehVSTI1P0gBAQCPn8YK43aNQjc77",
+	    'oauth_access_token_secret' => "j9AKqTzexMGmx71Z2BWsscZntnzcXUohDNT0DiuUIjR6z",
+	    'consumer_key' => "MRldW5bC92XmHUKUYI3kGyPV3",
+	    'consumer_secret' => "RGKZvC8wl0ucg3dUDTFcgXBQATLzK8XXCTJqtnogmagL3dS1dC"
+        
+Running Man Code Source: https://codepen.io/anon/pen/XQdVMw
