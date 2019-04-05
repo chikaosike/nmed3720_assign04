@@ -74,8 +74,8 @@ function update() {
 function draw() {
     mCtx.clearRect(0, 0, mViewWidth, mViewHeight);
 
-    var trail;
-    var start = 200;
+    //    var trail;
+    var start = 80;
 
     for (var i = mTrailSprites.length - 1; i >= 0; i--) {
         trail = mTrailSprites[i];

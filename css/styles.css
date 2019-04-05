@@ -5,8 +5,8 @@
 }
 
 .wrapper {
-    height: 480px;
-    width: 852px;
+    height: 960px;
+    width: 1704px;
     margin: auto;
     box-shadow: 1px 1px 5px #000;
 }
@@ -23,20 +23,21 @@ body {
 }
 
 #canvas {
-    /*    position: absolute;*/
-    margin: auto;
-    width: 600px;
-    height: 548px;
-    top: 0;
+    position: absolute;
+    margin: 0;
+    width: 350px;
+    height: 274px;
+    top: 650px;
     bottom: 0;
-    left: 0px;
+    left: 30%;
     right: 0;
 }
 
 .hero-bkg-animated {
     background: url(../imgs/park.jpg) repeat 0 0;
-    height: 480px;
-    width: 852px;
+    height: 960px;
+    width: 1704px;
+    background-size: cover;
     -webkit-animation: slide 20s linear infinite;
 }
 
@@ -46,6 +47,6 @@ body {
     }
 
     to {
-        background-position: -800px 0;
+        background-position: -1000px 0;
     }
 }
