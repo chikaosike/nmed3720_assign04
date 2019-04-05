@@ -19,30 +19,29 @@ function init() {
 
     requestAnimationFrame(loop);
 
-    var running;
+    var main;
     var input = document.getElementById("button");
-
     input.addEventListener("click", function () {
-        query = input.value;
-        console.log(query);
+
         callAjax();
 
     });
 
-    function callAjax() {
+    function callAjax(run) {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'get_tweets.php?q=#running', true); //this changes the state of xmlhttp
+        xhr.open('GET', "get_tweets.php?q=#running" + run, true); //this changes the state of xmlhttp
         xhr.send(null);
         xhr.onload = function () {
-
             if (xhr.status == 200) {
                 var tweets = JSON.parse(xhr.responseText);
-                tweets = tweets.statuses;
+                //                tweets = tweets.statuses;
                 console.log(tweets)
+                document.getElementById(run).innerHTML = tweets.statuses[0].full_text + run;
 
             } else {
                 console.log(xhr);
                 document.getElementById("results").innerHTML = xhr.responseText;
+
             }
         }
     }
