@@ -23,7 +23,7 @@ function init() {
     var input = document.getElementById("button");
     input.addEventListener("click", function () {
 
-        callAjax();
+        callAjax("move");
 
     });
 
@@ -36,7 +36,7 @@ function init() {
                 var tweets = JSON.parse(xhr.responseText);
                 //                tweets = tweets.statuses;
                 console.log(tweets)
-                document.getElementById(run).innerHTML = tweets.statuses[0].full_text + run;
+                document.getElementById(run).innerHTML = tweets.statuses[0].full_text;
 
             } else {
                 console.log(xhr);

@@ -17,6 +17,10 @@ p,
     text-align: center;
 }
 
+h1 {
+    margin: 20px;
+}
+
 body {
     font-family: 'ZCOOL XiaoWei', serif;
     background: #f9ee88;
