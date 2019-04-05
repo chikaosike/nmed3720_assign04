@@ -5,13 +5,14 @@
 }
 
 .wrapper {
-    max-width: 1280px;
-    height: 1000px;
+    height: 480px;
+    width: 852px;
     margin: auto;
     box-shadow: 1px 1px 5px #000;
 }
 
 h1,
+p,
 #results {
     text-align: center;
 }
@@ -22,12 +23,29 @@ body {
 }
 
 #canvas {
-/*    position: absolute;*/
+    /*    position: absolute;*/
     margin: auto;
-    width: 500px;
-    height: 474px;
+    width: 600px;
+    height: 548px;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 0px;
     right: 0;
+}
+
+.hero-bkg-animated {
+    background: url(../imgs/park.jpg) repeat 0 0;
+    height: 480px;
+    width: 852px;
+    -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -800px 0;
+    }
 }

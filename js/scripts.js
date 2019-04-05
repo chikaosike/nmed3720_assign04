@@ -14,26 +14,24 @@ mImage.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/running-man.pn
 mImage.onload = init;
 
 function init() {
-    
+
     initAllTheThings();
 
     requestAnimationFrame(loop);
 
     var query;
-    var input = document.getElementById("query");
+    var input = document.getElementById("button");
 
-    input.addEventListener("keypress", function (e) {
-        if (e.key == "Enter") {
-            query = input.value;
-            console.log(query);
-            getTweets();
+    input.addEventListener("click", function () {
+        query = input.value;
+        console.log(query);
+        getTweets();
 
-        }
     })
 
-    function getTweets() {
+    function callAjax() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'get_tweets.php?q=' + query, true); //this changes the state of xmlhttp
+        xhr.open('GET', 'get_tweets.php?q=#running', true); //this changes the state of xmlhttp
         xhr.send(null);
         xhr.onload = function () {
 
@@ -41,15 +39,6 @@ function init() {
                 var tweets = JSON.parse(xhr.responseText);
                 tweets = tweets.statuses;
                 console.log(tweets)
-
-                //  EXAMPLE OUTPUT TO A LIST
-                var tweetList = "<ul>";
-                tweets.forEach(function (tweet) {
-                    tweetList += "<li>" + tweet.text + "</li>";
-                });
-                tweetList += "</ul>"
-
-                document.getElementById("results").innerHTML = tweetList;
 
             } else {
                 console.log(xhr);
@@ -60,10 +49,10 @@ function init() {
 }
 
 function initAllTheThings() {
-    mRunnerSprite = new Sprite(mImage, 302, 274, (1/30));
+    mRunnerSprite = new Sprite(mImage, 302, 274, (1 / 30));
 
     for (var i = 0; i < 24; i++) {
-        mTrailSprites[i] = new TrailSprite(mImage, 302, 274, (1/30));
+        mTrailSprites[i] = new TrailSprite(mImage, 302, 274, (1 / 30));
         mTrailSprites[i].color.h = -(i % 8) * 10;
     }
 }
@@ -73,11 +62,11 @@ function initAllTheThings() {
 /////////////////////////////
 
 function update() {
-    var dt = (1/60);
+    var dt = (1 / 60);
 
     mRunnerSprite.update(dt);
 
-    mTrailSprites.forEach(function(s) {
+    mTrailSprites.forEach(function (s) {
         s.update(dt);
     });
 }
@@ -123,7 +112,7 @@ function Sprite(img, fw, fh, interval) {
     this.draw();
 }
 Sprite.prototype = {
-    update:function(dt) {
+    update: function (dt) {
         this.time += dt;
 
         if (this.time >= this.interval) {
@@ -135,7 +124,7 @@ Sprite.prototype = {
             this.draw();
         }
     },
-    draw:function() {
+    draw: function () {
         var f = this.frames[this.frameIndex];
 
         this.ctx.clearRect(0, 0, this.frameWidth, this.frameHeight);
@@ -159,7 +148,7 @@ function TrailSprite(img, fw, fh, interval) {
     this.draw();
 }
 TrailSprite.prototype = {
-    update:function(dt) {
+    update: function (dt) {
         this.time += dt;
         this.color.h += 5;
 
@@ -172,7 +161,7 @@ TrailSprite.prototype = {
             this.draw();
         }
     },
-    draw:function() {
+    draw: function () {
         var f = this.frames[this.frameIndex];
 
         this.ctx.clearRect(0, 0, this.frameWidth, this.frameHeight);
@@ -191,7 +180,7 @@ function HSL(h, s, l) {
     this.l = l;
 }
 HSL.prototype = {
-    toString:function() {
+    toString: function () {
         return 'hsl(' + this.h + ',' + this.s + '%,' + this.l + '%)';
     }
 };
